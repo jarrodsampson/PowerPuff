@@ -1,14 +1,24 @@
 var customScripts = {
-    scrollAnchors: function () {
+    parallax: function () {
 
-        // SCROLL SCRIPTS
-        $('.scroll-me a').bind('click', function (event) { //just pass scroll-me class and start scrolling
-            var $anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutQuad');
-            event.preventDefault();
-        });
+        $('.parallax').parallax();
+
+    },
+    scrollSpy: function () {
+
+            $('.scrollspy').scrollSpy();
+
+    },
+    modals: function () {
+
+        $('.modal-trigger').leanModal({
+                    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                    opacity: .5, // Opacity of modal background
+                    in_duration: 300, // Transition in duration
+                    out_duration: 200, // Transition out duration
+                    ready: function() {  }, // Callback for Modal open
+                    complete: function() {  } // Callback for Modal close
+                });
 
     },
     wowScrolls: function () {
@@ -18,7 +28,8 @@ var customScripts = {
         /* ---------------------------------------------- */
 
         wow = new WOW({
-            mobile: false
+            mobile: false,
+            offset: 100,
         });
         wow.init();
 
@@ -51,6 +62,8 @@ var customScripts = {
 			onNotTop : function() {}
 		}).init();
 
+		$(".button-collapse").sideNav();
+
     },
     scrollTop: function () {
 
@@ -64,7 +77,7 @@ var customScripts = {
 
        // go to anchor when clicked
         $(function () {
-            $('a[href*=#]:not([id=scrollUp])').click(function () {
+            $('a[href*=#]:not([id=game]):not([id=history])').click(function () {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -78,25 +91,16 @@ var customScripts = {
             });
         });
 
-        $('.parallax').parallax();
-
-        $('.modal-trigger').leanModal({
-            dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            opacity: .5, // Opacity of modal background
-            in_duration: 300, // Transition in duration
-            out_duration: 200, // Transition out duration
-            ready: function() {  }, // Callback for Modal open
-            complete: function() {  } // Callback for Modal close
-        });
-
-        $('.scrollspy').scrollSpy();
-
+        $(".loader").delay(1000).fadeOut(1000);
 
     },
     init: function () {
         customScripts.scrollTop();
         customScripts.wowScrolls();
         customScripts.headroom();
+        customScripts.parallax();
+        customScripts.scrollSpy();
+        customScripts.modals();
     }
 };
 $('document').ready(function () {
