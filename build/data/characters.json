@@ -1,0 +1,38 @@
+[
+  {
+    "image": "blossom.png",
+    "description": "Blossom"
+  },
+  {
+    "image": "bubbles.png",
+    "description": "Bubbles"
+  },
+  {
+    "image": "buttercup.png",
+    "description": "Buttercup"
+  },
+  {
+    "image": "utonium.png",
+    "description": "Professor Utonium"
+  },
+  {
+    "image": "mojo.png",
+    "description": "Mojojojo"
+  },
+  {
+    "image": "mayor.png",
+    "description": "The Mayor"
+  },
+  {
+    "image": "lumpkins.png",
+    "description": "Fuzzy Lumpkins"
+  },
+  {
+    "image": "him.png",
+    "description": "HIM"
+  },
+  {
+    "image": "princess.png",
+    "description": "Princess Morebucks"
+  }
+]
